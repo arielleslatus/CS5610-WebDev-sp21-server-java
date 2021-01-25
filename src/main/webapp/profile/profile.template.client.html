@@ -19,7 +19,7 @@
                     Username:
                 </label>
                 <div class="col-sm-10">
-                    <input class="form-control" class="form-control" id="usernameFld"/>
+                    <input readonly class="form-control" class="form-control" id="usernameFld" placeholder="Alice"/>
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
                     Phone:
                 </label>
                 <div class="col-sm-10">
-                    <input class="form-control" id="phoneFld"/>
+                    <input class="form-control" id="phoneFld" placeholder="123-456-7890"/>
                 </div>
             </div>
 
@@ -37,16 +37,7 @@
                     Email:
                 </label>
                 <div class="col-sm-10">
-                    <input class="form-control" id="emailFld"/>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="dobFld" class="col-sm-2">
-                    Date of Birth:
-                </label>
-                <div class="col-sm-10">
-                    <input class="form-control" id="dobFld"/>
+                    <input class="form-control" id="emailFld" placeholder="alice@wonderland.com"/>
                 </div>
             </div>
 
@@ -55,12 +46,20 @@
                     Role:
                 </label>
                 <div class="col-sm-10">
-                    <input class="form-control" id="roleFld"/>
-                    <select>
-                        <option value="Faculty"></option>
-                        <option value="Student"></option>
-                        <option value="Admin"></option>
+                    <select class="form-select form-control" id="roleFld">
+                        <option value="Faculty">Faculty</option>
+                        <option value="Student">Student</option>
+                        <option value="Admin">Admin</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="dobFld" class="col-sm-2">
+                    Date of Birth:
+                </label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="dobFld" placeholder="mm/dd/yyyy"/>
                 </div>
             </div>
 
