@@ -3,8 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>Course List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="../styles.css" rel="stylesheet"/>
 </head>
 <body>
+
+    <div class="ats-sticky-nav-bar">
+        <div class="row">
+            <div class="col">
+                <i class="fas fa-bars fa-2x"></i>
+            </div>
+            <div class="col">
+                Course Manager
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="New Course Title">
+            </div>
+            <div class="col">
+                <i class="fas fa-plus fa-2x"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h1>Course List</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Owned by</th>
+                    <th>Last Modified</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="../course-editor/course-editor.template.client.html">
+                            <i class="fas fa-folder"></i>
+                            CS5500 Software Engineering Graduate
+                        </a>
+
+                    </td>
+                    <td>me</td>
+                    <td>6:45 PM</td>
+                    <td>
+                        <i class="fas fa-times"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="../course-editor/course-editor.template.client.html">
+                            <i class="fas fa-folder"></i>
+                            CS4550 Software Engineering Undergraduate
+                        </a>
+                    </td>
+                    <td>me</td>
+                    <td>6:45 PM</td>
+                    <td>
+                        <i class="fas fa-times"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="../course-editor/course-editor.template.client.html">
+                            <i class="fas fa-folder"></i>
+                            CS4500 WebDev Undergraduate
+                        </a>
+                    </td>
+                    <td>me</td>
+                    <td>6:45 PM</td>
+                    <td>
+                        <i class="fas fa-times"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="../course-editor/course-editor.template.client.html">
+                            <i class="fas fa-folder"></i>
+                            CS5610 WebDev Graduate
+                        </a>
+                    </td>
+                    <td>me</td>
+                    <td>6:44 PM</td>
+                    <td>
+                        <i class="fas fa-times"></i>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <a href="../index.html">Home</a>
+
+    </div>
+
 
 </body>
 </html>
