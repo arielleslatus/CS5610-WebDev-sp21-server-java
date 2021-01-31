@@ -1,0 +1,44 @@
+.nav {
+    margin-bottom: -11px;
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+.ats-list-area {
+    padding: 0px;
+    background-color: slategrey;
+}
+
+.ats-pills-content-area {
+    padding: 0px 15px;
+}
+
+.list-group-item {
+    margin: 15px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightgrey;
+
+}
+
+.ats-list {
+    padding: 0px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.ats-add-module {
+    background-color: slategrey;
+    padding-right: 15px;
+    padding-bottom: 15px;}

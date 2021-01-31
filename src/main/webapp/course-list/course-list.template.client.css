@@ -1,0 +1,28 @@
+.ats-list-item {
+    padding: 10px;
+    margin-top: -1px;
+    border: thin solid slategray;
+    color: slategrey;
+    background-color: white;
+}
+
+.ats-list-area {
+    padding-top: 60px;
+}
+
+.ats-timestamp-label {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: darkslategrey;
+}
+
+.ats-sticky-list-bar {
+    color: darkslategrey;
+    background-color: lightgrey;
+    padding: 15px;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    margin: 0;
+}

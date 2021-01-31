@@ -5,101 +5,116 @@
     <title>Course Editor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
+    <link href="../style.css" rel="stylesheet"/>
+    <link href="course-editor.template.client.css" rel="stylesheet"/>
 
 </head>
 <body>
-    <div class="container">
-        <h1 class="ats-sticky-nav-bar">Course Editor</h1>
-        <div class="row">
-            <div class="col-4">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        Module 1 - jQuery
-                        <i class="fas fa-times float-right"></i>
-                    </li>
-                    <li class="list-group-item active">
-                        Module 2 - React
-                        <i class="fas fa-times float-right"></i>
-                    </li>
-                    <li class="list-group-item">
-                        Module 3 - Redux
-                        <i class="fas fa-times float-right"></i>
-                    </li>
-                    <li class="list-group-item">
-                        Module 4 - Native
-                        <i class="fas fa-times float-right"></i>
-                    </li>
-                    <li class="list-group-item">
-                        Module 5 - Angular
-                        <i class="fas fa-times float-right"></i>
-                    </li>
-                    <li class="list-group-item">
-                        Module 6 - Node
-                        <i class="fas fa-times float-right"></i>
-                    </li>
-                    <li class="list-group-item">
-                        Module 7 - Mongo
-                        <i class="fas fa-times float-right"></i>
-                    </li>
-                    <li class="list-group-item">
-                        <i class="fas fa-plus float-right"></i>
-                    </li>
-                </ul>
+    <div class="container-xxl">
+        <div class="ats-sticky-nav-bar row">
+            <i class="fas fa-times fa-2x col-1 ats-vertical-align"></i>
+            <div class="col-4 ats-vertical-align">
+                Course Editor
             </div>
-            <div class="col-8">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Build</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Pages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Theme</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Store</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Apps</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-plus"></i>
-                        </a>
-                    </li>
-                </ul>
+            <ul class="nav nav-tabs col-7">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Build</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Pages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Theme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Store</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Apps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-                <br/>
 
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Topic 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Topic 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Topic 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Topic 4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-plus"></i>
-                        </a>
-                    </li>
-                </ul>
+        <div class="container-lg">
+            <div class="row ats-page-body">
 
-                <br/>
+                <div class="ats-list-area col-4">
 
-                Content Intentionally Left Blank
+                    <ul class="ats-list">
+                        <li class="list-group-item">
+                            Module 1 - jQuery
+                            <i class="fas fa-times float-right"></i>
+                        </li>
+                        <li class="list-group-item active">
+                            Module 2 - React
+                            <i class="fas fa-times float-right"></i>
+                        </li>
+                        <li class="list-group-item">
+                            Module 3 - Redux
+                            <i class="fas fa-times float-right"></i>
+                        </li>
+                        <li class="list-group-item">
+                            Module 4 - Native
+                            <i class="fas fa-times float-right"></i>
+                        </li>
+                        <li class="list-group-item">
+                            Module 5 - Angular
+                            <i class="fas fa-times float-right"></i>
+                        </li>
+                        <li class="list-group-item">
+                            Module 6 - Node
+                            <i class="fas fa-times float-right"></i>
+                        </li>
+                        <li class="list-group-item">
+                            Module 7 - Mongo
+                            <i class="fas fa-times float-right"></i>
+                        </li>
+                        <div class="ats-add-module">
+                            <i class="fas fa-plus float-right"></i>
+                        </div>
+                    </ul>
+                </div>
+
+
+                <div class="ats-pills-content-area col-8">
+                    <br/>
+
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Topic 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Topic 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Topic 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Topic 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <br/>
+
+                    Content Intentionally Left Blank
+                </div>
+
             </div>
+
 
         </div>
 
