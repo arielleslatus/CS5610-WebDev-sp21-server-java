@@ -12,13 +12,17 @@
 .ats-sticky-list-bar {
     color: darkslategrey;
     background-color: lightgrey;
-    padding: 20px;
+    padding: 15px;
     font-weight: bold;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    margin: 0;
 }
 
-.container {
+.ats-page-body {
     padding-top: 58px;
-
+    background-color: whitesmoke;
 }
 
 .ats-vertical-align {
@@ -30,6 +34,11 @@
     margin-top: -1px;
     border: thin solid slategray;
     color: slategrey;
+    background-color: white;
+}
+
+.ats-list-area {
+    padding-top: 60px;
 }
 
 .ats-timestamp-label {
