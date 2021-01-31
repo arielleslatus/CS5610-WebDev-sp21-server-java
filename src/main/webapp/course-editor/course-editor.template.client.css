@@ -8,7 +8,7 @@
 
 .ats-list-area {
     padding: 0px;
-    background-color: slategrey;
+    background-color: lightgrey;
 }
 
 .ats-pills-content-area {
@@ -16,12 +16,11 @@
 }
 
 .list-group-item {
-    margin: 15px;
-    height: 40px;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
     border-radius: 5px;
-    background-color: lightgrey;
-
+    background-color: white;
+    color: slategrey;
 }
 
 .ats-list {
@@ -39,6 +38,13 @@
 }
 
 .ats-add-module {
-    background-color: slategrey;
     padding-right: 15px;
-    padding-bottom: 15px;}
+    padding-bottom: 15px;
+}
+
+.ats-pill {
+    background-color: lightgrey;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: center;
+}
