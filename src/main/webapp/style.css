@@ -5,8 +5,35 @@
     position: fixed;
     width: 100%;
     z-index: 1;
+    font-size: 18px;
+    margin: 0 auto
+}
+
+.ats-sticky-list-bar {
+    color: darkslategrey;
+    background-color: lightgrey;
+    padding: 20px;
+    font-weight: bold;
 }
 
 .container {
-    padding-top: 60px;
+    padding-top: 58px;
+
+}
+
+.ats-vertical-align {
+    align-self: center;
+}
+
+.ats-list-item {
+    padding: 10px;
+    margin-top: -1px;
+    border: thin solid slategray;
+    color: slategrey;
+}
+
+.ats-timestamp-label {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: darkslategrey;
 }
