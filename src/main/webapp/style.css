@@ -13,11 +13,13 @@
 .ats-page-body {
     padding-top: 58px;
     background-color: whitesmoke;
+    padding-bottom: 58px;
 }
 
 .ats-vertical-align {
     align-self: center;
 }
+
 
 
 
