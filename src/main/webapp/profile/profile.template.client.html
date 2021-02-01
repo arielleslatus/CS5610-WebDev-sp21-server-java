@@ -4,82 +4,90 @@
     <meta charset="UTF-8">
     <title>Profile</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="profile.template.client.css" rel="stylesheet"/>
+    <link href="../style.css" rel="stylesheet"/>
 
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container-xxl">
+        <div class=" ats-page-body ats-fill">
+            <div class="container-lg ats-login-sign-up-box">
+                <div class="ats-center-heading">
+                    <h1>Profile</h1>
+                </div>
 
-        <h1>Profile</h1>
+                <div class="alert alert-success alertFld" role="alert">
+                    Profile successfully updated!
+                </div>
 
-        <div class="alert alert-success alertFld" role="alert">
-            Profile successfully updated!
+                <form>
+
+                    <div class="form-group row">
+                        <label for="usernameFld" class="col-sm-2">
+                            Username:
+                        </label>
+                        <div class="col-sm-10">
+                            <input  readonly class="form-control " id="usernameFld" value="Alice"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="phoneFld" class="col-sm-2">
+                            Phone:
+                        </label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="phoneFld" placeholder="123-456-7890"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="emailFld" class="col-sm-2">
+                            Email:
+                        </label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="emailFld" placeholder="alice@wonderland.com"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="roleFld" class="col-sm-2">
+                            Role:
+                        </label>
+                        <div class="col-sm-10">
+                            <select class="form-select form-control" id="roleFld">
+                                <option value="Faculty">Faculty</option>
+                                <option value="Student">Student</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="dobFld" class="col-sm-2">
+                            Date of Birth:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="dobFld" placeholder="mm/dd/yyyy"/>
+                        </div>
+                    </div>
+
+                    <div class="offset-sm-2 form-group">
+                        <button class="btn form-control ats-button" id="updateBtn">Update</button>
+                    </div>
+
+                    <div class="offset-sm-2 form-group">
+                        <a class="btn btn-danger form-control" href="../index.html" id="logoutBtn">Logout</a>
+
+                    </div>
+
+                </form>
+
+            </div>
         </div>
-
-        <form>
-
-            <div class="form-group row">
-                <label for="usernameFld" class="col-sm-2">
-                    Username:
-                </label>
-                <div class="col-sm-10">
-                    <input  readonly class="form-control " id="usernameFld" value="Alice"/>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="phoneFld" class="col-sm-2">
-                    Phone:
-                </label>
-                <div class="col-sm-10">
-                    <input class="form-control" id="phoneFld" placeholder="123-456-7890"/>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="emailFld" class="col-sm-2">
-                    Email:
-                </label>
-                <div class="col-sm-10">
-                    <input class="form-control" id="emailFld" placeholder="alice@wonderland.com"/>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="roleFld" class="col-sm-2">
-                    Role:
-                </label>
-                <div class="col-sm-10">
-                    <select class="form-select form-control" id="roleFld">
-                        <option value="Faculty">Faculty</option>
-                        <option value="Student">Student</option>
-                        <option value="Admin">Admin</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="dobFld" class="col-sm-2">
-                    Date of Birth:
-                </label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control" id="dobFld" placeholder="mm/dd/yyyy"/>
-                </div>
-            </div>
-
-            <div class="offset-sm-2 form-group">
-                <button class="btn btn-info form-control" id="updateBtn">Update</button>
-            </div>
-
-            <div class="offset-sm-2 form-group">
-                <a class="btn btn-danger form-control" href="../index.html" id="logoutBtn">Logout</a>
-
-            </div>
-
-        </form>
-
     </div>
+
 
 
 </body>
