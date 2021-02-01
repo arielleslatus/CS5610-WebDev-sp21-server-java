@@ -38,8 +38,8 @@
 }
 
 .ats-add-module {
-    padding-right: 15px;
-    padding-bottom: 15px;
+    margin: 20px;
+    padding: 20px;
 }
 
 .ats-pill {
@@ -47,4 +47,8 @@
     border-radius: 5px;
     margin: 20px;
     text-align: center;
+}
+
+.ats-home-button {
+    padding-left: 10px;
 }
