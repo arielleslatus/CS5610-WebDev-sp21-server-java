@@ -1,23 +1,4 @@
-.container-lg {
-    background-color: lightgrey;
-    padding: 150px 100px;
-    border-radius: 5px;
-    color: darkslategrey;
-}
 
-.container-xxl {
-    background-color: green;
-}
 
-.ats-fill {
-    min-height: 100vh;
-}
 
-.ats-button {
-    background-color: darkslateblue;
-    color: whitesmoke;
-}
 
-.ats-center-heading {
-    text-align: center;
-}
