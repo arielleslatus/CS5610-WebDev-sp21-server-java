@@ -31,13 +31,13 @@ addUserBtn.click(function() {
 
 
 const users = [
-    {id: 1429, username: "prue", firstName: "Prudence", lastName: "Halliwell", role: "Admin"},
-    {id: 6666, username: "brina", firstName: "Sabrina", lastName: "Spellman", role: "Student"},
-    {id: 3145, username: "wil", firstName: "Willow", lastName: "Rosenberg", role: "Faculty"},
-    {id: 1909, username: "hermione", firstName: "Hermione", lastName: "Granger", role: "Student"}
+    {username: "prue", firstName: "Prudence", lastName: "Halliwell", role: "Admin"},
+    {username: "brina", firstName: "Sabrina", lastName: "Spellman", role: "Student"},
+    {username: "wil", firstName: "Willow", lastName: "Rosenberg", role: "Faculty"},
+    {username: "hermione", firstName: "Hermione", lastName: "Granger", role: "Student"}
 ]
 
-const newUser = {id: 1111, username: "glinda", firstName: "Glinda", lastName: "Good", role: "Admin"}
+const newUser = {username: "glinda", firstName: "Glinda", lastName: "Good", role: "Admin"}
 
 
 const tBody = jQuery(".ats-user-table-body");
@@ -83,4 +83,22 @@ function renderUsers(users) {
 
 
 renderUsers(users)
+
+let $usernameFld = $(".ats-username-fld")
+let $passwordFld = $(".ats-password-fld")
+let $firstNameFld = $(".ats-first-name-fld")
+let $lastNameFld = $(".ats-last-name-fld")
+let $roleFld = $(".ats-role-fld")
+
+let $createNewUserBtn = $(".ats-create-new-user-btn")
+
+$createNewUserBtn.click(function() {
+    let newUser = {
+        username: $usernameFld.val(),
+        firstName: $firstNameFld.val(),
+        lastName: $lastNameFld.val(),
+        role: $roleFld.val()
+    }
+    addUser(newUser)
+})
 
