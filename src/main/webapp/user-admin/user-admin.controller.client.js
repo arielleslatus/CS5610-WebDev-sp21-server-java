@@ -31,10 +31,10 @@ addUserBtn.click(function() {
 
 
 const users = [
-    {username: "prue", firstName: "Prudence", lastName: "Halliwell", role: "Admin"},
-    {username: "brina", firstName: "Sabrina", lastName: "Spellman", role: "Student"},
-    {username: "wil", firstName: "Willow", lastName: "Rosenberg", role: "Faculty"},
-    {username: "hermione", firstName: "Hermione", lastName: "Granger", role: "Student"}
+    {username: "prue", password: "powerOf3", firstName: "Prudence", lastName: "Halliwell", role: "Admin"},
+    {username: "brina", password: "praiseSatan", firstName: "Sabrina", lastName: "Spellman", role: "Student"},
+    {username: "wil", password: "boredNow", firstName: "Willow", lastName: "Rosenberg", role: "Faculty"},
+    {username: "hermione", password: "LeviOsa", firstName: "Hermione", lastName: "Granger", role: "Student"}
 ]
 
 const newUser = {username: "glinda", firstName: "Glinda", lastName: "Good", role: "Admin"}
@@ -95,10 +95,15 @@ let $createNewUserBtn = $(".ats-create-new-user-btn")
 $createNewUserBtn.click(function() {
     let newUser = {
         username: $usernameFld.val(),
+        password: $passwordFld.val(),
         firstName: $firstNameFld.val(),
         lastName: $lastNameFld.val(),
         role: $roleFld.val()
     }
     addUser(newUser)
+    username: $usernameFld.val("")
+    password: $passwordFld.val("")
+    firstName: $firstNameFld.val("")
+    lastName: $lastNameFld.val("")
 })
 
