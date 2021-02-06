@@ -30,18 +30,14 @@ let $roleFld;
 let $createNewUserBtn;
 let addUserBtn;
 let tBody;
+let userService = new AdminUserServiceClient();
 
 
-
-
-
-
-
-const users = [
-    {username: "prue", password: "powerOf3", firstName: "Prudence", lastName: "Halliwell", role: "Admin"},
+let users = [
+  /*  {username: "prue", password: "powerOf3", firstName: "Prudence", lastName: "Halliwell", role: "Admin"},
     {username: "brina", password: "praiseSatan", firstName: "Sabrina", lastName: "Spellman", role: "Student"},
     {username: "wil", password: "boredNow", firstName: "Willow", lastName: "Rosenberg", role: "Faculty"},
-    {username: "hermione", password: "LeviOsa", firstName: "Hermione", lastName: "Granger", role: "Student"}
+    {username: "hermione", password: "LeviOsa", firstName: "Hermione", lastName: "Granger", role: "Student"}*/
 ]
 
 const newUser = {username: "glinda", firstName: "Glinda", lastName: "Good", role: "Admin"}
@@ -126,6 +122,12 @@ function main() {
     })
 
     tBody = jQuery(".ats-user-table-body");
+
+    userService.findAllUsers()
+        .then(function (actualUsersFromServer) {
+            users = actualUsersFromServer
+            renderUsers(users)
+        })
 
 
 
