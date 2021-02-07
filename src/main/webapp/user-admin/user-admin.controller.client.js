@@ -1,4 +1,3 @@
-(function () {
     /*var $usernameFld, $passwordFld;
     var $firstNameFld, $lastNameFld, $roleFld;
     var $removeBtn, $editBtn, $createBtn;
@@ -6,13 +5,6 @@
     var userService = new AdminUserServiceClient();*/
     //$(main);
 
-
-
-
-
-    /*function main() {
-
-    }*/
     //function createUser() { … }
     //function deleteUser() { … }
     //function selectUser() { … }
@@ -20,7 +12,6 @@
     //function renderUsers(users) { … }
     //function findAllUsers() { … } // optional - might not need this
     //function findUserById() { … } // optional - might not need this
-})();
 
 let $usernameFld;
 let $passwordFld;
@@ -29,6 +20,7 @@ let $lastNameFld;
 let $roleFld;
 let $createNewUserBtn;
 let addUserBtn;
+let newUser;
 let tBody;
 let userService = new AdminUserServiceClient();
 
@@ -40,13 +32,15 @@ let users = [
     {username: "hermione", password: "LeviOsa", firstName: "Hermione", lastName: "Granger", role: "Student"}*/
 ]
 
-const newUser = {username: "glinda", firstName: "Glinda", lastName: "Good", role: "Admin"}
-
-
+//const newUser = {username: "glinda", firstName: "Glinda", lastName: "Good", role: "Admin"}
 
 function addUser(user) {
-    users.push(user)
-    renderUsers(users)
+    userService.createUser(user)
+        .then(function(actualUser) {
+            users.push(actualUser)
+            renderUsers(users)
+        })
+
 }
 
 function renderUsers(users) {
@@ -67,22 +61,41 @@ function renderUsers(users) {
                                 <button class="ats-delete-btn" id="${i}">
                                     Delete
                                 </button>
-                                <button>
-                                     <i class="fa-2x fa fa-pencil"></i>
+                                <button class="ats-select-btn" id="${user._id}">
+                                    Select
                                 </button>
                             </span>
                         </td>
                       </tr>`)
     }
-    jQuery(".ats-delete-btn").click(deleteUser)
+    jQuery(".ats-delete-btn")
+        .click(deleteUser)
+    jQuery(".ats-select-btn")
+        .click(selectUser)
 }
 
 function deleteUser(event) {
     let del = jQuery(event.target)
-    let theId = del.attr("id")
-    //console.log(theId)
-    users.splice(theId, 1)
+    let theIndex = del.attr("id")
+    let theId = users[theIndex]._id
+    userService.deleteUser(theId)
+        .then(function (status) {
+
+        })
+    users.splice(theIndex, 1)
     renderUsers(users)
+}
+
+function selectUser(event) {
+    let selectBtn = jQuery(event.target)
+    let theId = selectBtn.attr("id")
+    let theUser = users.find(user => user._id === theId)
+    $usernameFld.val(theUser.username)
+    $passwordFld.val(theUser.password)
+    $firstNameFld.val(theUser.firstName)
+    $lastNameFld.val(theUser.lastName)
+    $roleFld.val(theUser.role)
+
 }
 
 
@@ -103,11 +116,9 @@ function main() {
 
     $createNewUserBtn = $(".ats-create-new-user-btn")
     addUserBtn = jQuery("#ats-add-user-btn")
-    addUserBtn.click(function() {
-        addUser(newUser)
-    })
+
     $createNewUserBtn.click(function() {
-        let newUser = {
+        newUser = {
             username: $usernameFld.val(),
             password: $passwordFld.val(),
             firstName: $firstNameFld.val(),
@@ -119,6 +130,10 @@ function main() {
         $passwordFld.val("")
         $firstNameFld.val("")
         $lastNameFld.val("")
+    })
+
+    addUserBtn.click(function() {
+        addUser(newUser)
     })
 
     tBody = jQuery(".ats-user-table-body");
