@@ -1,17 +1,3 @@
-    /*var $usernameFld, $passwordFld;
-    var $firstNameFld, $lastNameFld, $roleFld;
-    var $removeBtn, $editBtn, $createBtn;
-    var $userRowTemplate, $tbody;
-    var userService = new AdminUserServiceClient();*/
-    //$(main);
-
-    //function createUser() { … }
-    //function deleteUser() { … }
-    //function selectUser() { … }
-    //function updateUser() { … }
-    //function renderUsers(users) { … }
-    //function findAllUsers() { … } // optional - might not need this
-    //function findUserById() { … } // optional - might not need this
 
 let $usernameFld;
 let $passwordFld;
@@ -25,46 +11,39 @@ let newUser;
 let tBody;
 let userService = new AdminUserServiceClient();
 let selectedUser = null;
+let users = []
 
-
-let users = [
-  /*  {username: "prue", password: "powerOf3", firstName: "Prudence", lastName: "Halliwell", role: "Admin"},
-    {username: "brina", password: "praiseSatan", firstName: "Sabrina", lastName: "Spellman", role: "Student"},
-    {username: "wil", password: "boredNow", firstName: "Willow", lastName: "Rosenberg", role: "Faculty"},
-    {username: "hermione", password: "LeviOsa", firstName: "Hermione", lastName: "Granger", role: "Student"}*/
-]
-
-//const newUser = {username: "glinda", firstName: "Glinda", lastName: "Good", role: "Admin"}
-
-function addUser(user) {
+function createUser(user) {
     userService.createUser(user)
         .then(function(actualUser) {
             users.push(actualUser)
             renderUsers(users)
         })
-
 }
 
 function renderUsers(users) {
     tBody.empty()
-
     for (let i = 0; i < users.length; i++) {
-
         let user = users[i]
-
-        tBody.prepend(`<tr>
+        tBody.prepend(`<tr >
                         <td>${user.username}</td>
                         <td>&nbsp;</td>
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
                         <td>${user.role}</td>
                         <td>
-                            <span class="pull-right">
-                                <button class="ats-delete-btn" id="${i}">
+                            <span class="pull-right" >
+                                <button class=" ats-transparent-btn" id="${i}">
+                                    <div class="ats-admin-table-btn">
+                                         <i class="fa-2x fa fa-trash ats-update-user-btn "></i>
+                                    </div>
                                     Delete
                                 </button>
-                                <button class="ats-select-btn" id="${user._id}">
-                                    Select
+                                <button class="ats-select-btn ats-transparent-btn" id="${user._id}">
+                                    <div class="ats-admin-table-btn">
+                                        <i class="fa-2x fa fa-pencil-alt ats-update-user-btn"></i>
+                                    </div>
+                                    Edit
                                 </button>
                             </span>
                         </td>
@@ -82,7 +61,6 @@ function deleteUser(event) {
     let theId = users[theIndex]._id
     userService.deleteUser(theId)
         .then(function (status) {
-
         })
     users.splice(theIndex, 1)
     renderUsers(users)
@@ -97,7 +75,6 @@ function selectUser(event) {
     $firstNameFld.val(selectedUser.firstName)
     $lastNameFld.val(selectedUser.lastName)
     $roleFld.val(selectedUser.role)
-
 }
 
 function updateUser() {
@@ -112,27 +89,29 @@ function updateUser() {
             users[index] = selectedUser
             renderUsers(users)
         })
-
 }
 
+function findAllUsers() {
 
 
+    return users;
+}
 
-
-
+function findAllUsersById() {
+    for (let i = 0; i < users.length; i++) {
+        console.log("user: " + users[i].username + " | id: " + users[i]._id)
+    }
+}
 
 function main() {
-
     $usernameFld = $(".ats-username-fld")
     $passwordFld = $(".ats-password-fld")
     $firstNameFld = $(".ats-first-name-fld")
     $lastNameFld = $(".ats-last-name-fld")
     $roleFld = $(".ats-role-fld")
-
     $createNewUserBtn = $(".ats-create-new-user-btn")
     addUserBtn = jQuery("#ats-add-user-btn")
     $updateBtn = $(".ats-update-user-btn")
-
     $createNewUserBtn.click(function() {
         newUser = {
             username: $usernameFld.val(),
@@ -141,31 +120,22 @@ function main() {
             lastName: $lastNameFld.val(),
             role: $roleFld.val()
         }
-        addUser(newUser)
+        createUser(newUser)
         $usernameFld.val("")
         $passwordFld.val("")
         $firstNameFld.val("")
         $lastNameFld.val("")
     })
-
     $updateBtn.click(updateUser)
-
     addUserBtn.click(function() {
-        addUser(newUser)
+        createUser(newUser)
     })
-
     tBody = jQuery(".ats-user-table-body");
-
     userService.findAllUsers()
         .then(function (actualUsersFromServer) {
             users = actualUsersFromServer
             renderUsers(users)
         })
-
-
-
-
-
 }
 
 jQuery(main)

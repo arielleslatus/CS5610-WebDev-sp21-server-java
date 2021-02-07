@@ -20,7 +20,10 @@
 
 <body>
     <div class="container-fluid">
-        <h1>User Admin</h1>
+        <div class="ats-sticky-nav-bar">
+            <h1>User Admin</h1>
+        </div>
+        <br/>
         <table class="table">
             <thead>
             <tr>
@@ -31,8 +34,6 @@
                 <th>Role</th>
                 <th>&nbsp;</th>
             </tr>
-
-            <button id="ats-add-user-btn">Add New User</button>
 
             <tr>
                 <td>
@@ -59,12 +60,18 @@
                     </select>
                 </td>
                 <td>
-                    <span class="pull-right" style="white-space: nowrap">
-                        <button>
-                            <i class="fa-2x fa fa-plus ats-create-new-user-btn"></i>
+                    <span class="pull-right" >
+                        <button class="ats-transparent-btn">
+                            <div class="ats-admin-btn">
+                                <i class="fa-2x fa fa-plus-circle ats-create-new-user-btn"></i>
+                            </div>
+                            New
                         </button>
-                        <button>
-                            <i class="fa-2x fa fa-check ats-update-user-btn"></i>
+                        <button class="ats-transparent-btn">
+                            <div class="ats-admin-btn">
+                                <i class="fa-2x fa fa-check-circle ats-update-user-btn"></i>
+                            </div>
+                            Save
                         </button>
                     </span>
                 </td>

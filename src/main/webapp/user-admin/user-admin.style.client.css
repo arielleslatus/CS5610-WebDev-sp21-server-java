@@ -1,11 +1,47 @@
-.ats-user-table-body {
+.ats-table {
 
 }
 
 .ats-user-entry {
+    padding-left: 50px;
 
 }
 
 .ats-hidden {
     display: none;
+}
+
+.ats-delete-btn {
+    background-color: lightgrey;
+}
+
+.ats-select-button {
+    background-color: lightgrey;
+}
+
+.ats-transparent-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0px 20px;
+}
+
+
+.ats-admin-table-btn {
+    padding: 10px;
+    background-color: darkgrey;
+    color: whitesmoke;
+    border-radius: 5px;
+    width: 50px;
+    margin: 0 auto;
+}
+
+
+
+.ats-admin-btn {
+    padding: 10px;
+    background-color: darkslateblue;
+    color: whitesmoke;
+    border-radius: 5px;
+    width: 50px;
+    margin: 0 auto;
 }
