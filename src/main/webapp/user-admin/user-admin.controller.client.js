@@ -19,10 +19,12 @@ let $firstNameFld;
 let $lastNameFld;
 let $roleFld;
 let $createNewUserBtn;
+let $updateBtn ;
 let addUserBtn;
 let newUser;
 let tBody;
 let userService = new AdminUserServiceClient();
+let selectedUser = null;
 
 
 let users = [
@@ -89,17 +91,30 @@ function deleteUser(event) {
 function selectUser(event) {
     let selectBtn = jQuery(event.target)
     let theId = selectBtn.attr("id")
-    let theUser = users.find(user => user._id === theId)
-    $usernameFld.val(theUser.username)
-    $passwordFld.val(theUser.password)
-    $firstNameFld.val(theUser.firstName)
-    $lastNameFld.val(theUser.lastName)
-    $roleFld.val(theUser.role)
+    selectedUser = users.find(user => user._id === theId)
+    $usernameFld.val(selectedUser.username)
+    $passwordFld.val(selectedUser.password)
+    $firstNameFld.val(selectedUser.firstName)
+    $lastNameFld.val(selectedUser.lastName)
+    $roleFld.val(selectedUser.role)
 
 }
 
+function updateUser() {
+    selectedUser.username = $usernameFld.val()
+    selectedUser.password = $passwordFld.val()
+    selectedUser.firstName = $firstNameFld.val()
+    selectedUser.lastName = $lastNameFld.val()
+    selectedUser.role = $roleFld.val()
+    userService.updateUser(selectedUser._id, selectedUser)
+        .then(function (status) {
+            let index = users.findIndex(course => course._isDivider === selectedUser._id)
+            users[index] = selectedUser
+            renderUsers(users)
+        })
 
-//renderUsers(users)
+}
+
 
 
 
@@ -116,6 +131,7 @@ function main() {
 
     $createNewUserBtn = $(".ats-create-new-user-btn")
     addUserBtn = jQuery("#ats-add-user-btn")
+    $updateBtn = $(".ats-update-user-btn")
 
     $createNewUserBtn.click(function() {
         newUser = {
@@ -131,6 +147,8 @@ function main() {
         $firstNameFld.val("")
         $lastNameFld.val("")
     })
+
+    $updateBtn.click(updateUser)
 
     addUserBtn.click(function() {
         addUser(newUser)
