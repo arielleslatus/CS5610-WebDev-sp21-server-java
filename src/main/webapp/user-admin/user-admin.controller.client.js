@@ -78,6 +78,7 @@ function selectUser(event) {
 }
 
 function updateUser() {
+
     selectedUser.username = $usernameFld.val()
     selectedUser.password = $passwordFld.val()
     selectedUser.firstName = $firstNameFld.val()
@@ -115,25 +116,31 @@ function main() {
     addUserBtn = jQuery("#ats-add-user-btn")
     $updateBtn = $(".ats-update-user-btn")
     $createNewUserBtn.click(function() {
-        newUser = {
-            username: $usernameFld.val(),
-            password: $passwordFld.val(),
-            firstName: $firstNameFld.val(),
-            lastName: $lastNameFld.val(),
-            role: $roleFld.val()
+        if ($usernameFld.val() != "" && $passwordFld.val() != "" && $firstNameFld.val() != ""
+            && $lastNameFld.val() != "" && $roleFld.val() != "") {
+            newUser = {
+                username: $usernameFld.val(),
+                password: $passwordFld.val(),
+                firstName: $firstNameFld.val(),
+                lastName: $lastNameFld.val(),
+                role: $roleFld.val()
+            }
+            createUser(newUser)
+            $usernameFld.val("")
+            $passwordFld.val("")
+            $firstNameFld.val("")
+            $lastNameFld.val("")
         }
-        createUser(newUser)
-        $usernameFld.val("")
-        $passwordFld.val("")
-        $firstNameFld.val("")
-        $lastNameFld.val("")
     })
     $updateBtn.click(function() {
-        updateUser()
-        $usernameFld.val("")
-        $passwordFld.val("")
-        $firstNameFld.val("")
-        $lastNameFld.val("")
+        if ($usernameFld.val() != "" && $passwordFld.val() != "" && $firstNameFld.val() != ""
+            && $lastNameFld.val() != "" && $roleFld.val() != "") {
+            updateUser()
+            $usernameFld.val("")
+            $passwordFld.val("")
+            $firstNameFld.val("")
+            $lastNameFld.val("")
+        }
     })
     addUserBtn.click(function() {
         createUser(newUser)
