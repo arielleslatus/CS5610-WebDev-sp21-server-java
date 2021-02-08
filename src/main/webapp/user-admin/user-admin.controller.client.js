@@ -92,8 +92,6 @@ function updateUser() {
 }
 
 function findAllUsers() {
-
-
     return users;
 }
 
@@ -126,7 +124,13 @@ function main() {
         $firstNameFld.val("")
         $lastNameFld.val("")
     })
-    $updateBtn.click(updateUser)
+    $updateBtn.click(function() {
+        updateUser()
+        $usernameFld.val("")
+        $passwordFld.val("")
+        $firstNameFld.val("")
+        $lastNameFld.val("")
+    })
     addUserBtn.click(function() {
         createUser(newUser)
     })
