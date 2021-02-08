@@ -29,7 +29,8 @@
 
 .ats-table {
     margin-top: 36px;
-    overflow: scroll;
+    overflow-y: scroll;
+    width: 100%;
 }
 
 .ats-btn-area {
@@ -41,10 +42,14 @@
 }
 
 .ats-sticky-table-head {
-    border: none;
+    position: sticky;
 }
 
 .ats-row {
     margin: 0 auto;
 
+}
+
+.ats-title {
+    padding-left: 40px;
 }
