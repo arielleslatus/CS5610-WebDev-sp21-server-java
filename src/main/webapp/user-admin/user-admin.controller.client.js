@@ -92,7 +92,11 @@ function updateUser() {
 }
 
 function findAllUsers() {
-    return users;
+    userService.findAllUsers()
+        .then(function (actualUsersFromServer) {
+            users = actualUsersFromServer
+            renderUsers(users)
+        });
 }
 
 function findAllUsersById() {
@@ -135,11 +139,8 @@ function main() {
         createUser(newUser)
     })
     tBody = jQuery(".ats-user-table-body");
-    userService.findAllUsers()
-        .then(function (actualUsersFromServer) {
-            users = actualUsersFromServer
-            renderUsers(users)
-        })
+    findAllUsers()
+
 }
 
 jQuery(main)
