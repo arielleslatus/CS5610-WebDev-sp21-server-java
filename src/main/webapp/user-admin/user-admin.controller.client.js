@@ -26,11 +26,11 @@ function renderUsers(users) {
         let user = users[i]
         tBody.prepend(`<tr>
                         <td></td>
-                        <td class="align-middle">${user.username}</td>
+                        <td class="align-middle text-center">${user.username}</td>
                         <td>&nbsp;</td>
-                        <td class="align-middle">${user.firstName}</td>
-                        <td class="align-middle">${user.lastName}</td>
-                        <td class="align-middle">${user.role}</td>
+                        <td class="align-middle text-center">${user.firstName}</td>
+                        <td class="align-middle text-center">${user.lastName}</td>
+                        <td class="align-middle text-center">${user.role}</td>
                         <td class="align-middle">
                             <span class="pull-right">
                                 <button class="ats-delete-btn ats-transparent-btn" id="${i}">
