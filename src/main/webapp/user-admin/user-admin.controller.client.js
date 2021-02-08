@@ -1,4 +1,3 @@
-
 let $usernameFld;
 let $passwordFld;
 let $firstNameFld;
@@ -25,23 +24,24 @@ function renderUsers(users) {
     tBody.empty()
     for (let i = 0; i < users.length; i++) {
         let user = users[i]
-        tBody.prepend(`<tr >
+        tBody.prepend(`<tr>
+                        <td></td>
                         <td>${user.username}</td>
                         <td>&nbsp;</td>
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
                         <td>${user.role}</td>
                         <td>
-                            <span class="pull-right" >
-                                <button class=" ats-transparent-btn" id="${i}">
-                                    <div class="ats-admin-table-btn">
-                                         <i class="fa-2x fa fa-trash ats-update-user-btn "></i>
+                            <span class="pull-right">
+                                <button class="ats-delete-btn ats-transparent-btn" id="${i}">
+                                    <div >
+                                        <i class="fa-2x fa fa-trash ats-admin-table-btn" id="${i}"></i>
                                     </div>
                                     Delete
                                 </button>
                                 <button class="ats-select-btn ats-transparent-btn" id="${user._id}">
-                                    <div class="ats-admin-table-btn">
-                                        <i class="fa-2x fa fa-pencil-alt ats-update-user-btn"></i>
+                                    <div>
+                                        <i class="fa-2x fa fa-pencil-alt ats-admin-table-btn" id="${user._id}"></i>
                                     </div>
                                     Edit
                                 </button>
