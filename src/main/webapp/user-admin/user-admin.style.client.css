@@ -1,7 +1,3 @@
-.ats-hidden {
-    display: none;
-}
-
 .ats-transparent-btn {
     background-color: transparent;
     border: none;
@@ -29,11 +25,12 @@
 }
 
 .ats-table {
-    margin-top: 36px;
+    margin-top: 35px;
     overflow-y: scroll;
     width: 100%;
     font-size: 14px;
     color: darkslategray;
+    border-collapse: collapse;
 }
 
 .ats-btn-area {
@@ -48,22 +45,13 @@
     position: sticky;
 }
 
-.ats-row {
-    margin: 0 auto;
-
-}
-
 .ats-title {
     padding-left: 40px;
 }
 
 .ats-input-row {
-    background-color: lightgrey;
-}
+    border-top: hidden;
 
-.ats-title-row {
-    background-color: grey;
-    color: whitesmoke;
 }
 
 .ats-th {
