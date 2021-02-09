@@ -71,7 +71,7 @@ function selectUser(event) {
     let theId = selectBtn.attr("id")
     selectedUser = users.find(user => user._id === theId)
     $usernameFld.val(selectedUser.username)
-    $passwordFld.val(selectedUser.password)
+    $passwordFld.val("*****")
     $firstNameFld.val(selectedUser.firstName)
     $lastNameFld.val(selectedUser.lastName)
     $roleFld.val(selectedUser.role)
