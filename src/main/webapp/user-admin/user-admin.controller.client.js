@@ -35,13 +35,13 @@ function renderUsers(users) {
                             <span class="pull-right">
                                 <button class="ats-delete-btn ats-transparent-btn" id="${i}">
                                     <div >
-                                        <i class="fa-2x fa fa-trash ats-admin-table-btn" id="${i}"></i>
+                                        <i class="fa-2x fa fa-trash ats-admin-table-btn"></i>
                                     </div>
                                     Delete
                                 </button>
                                 <button class="ats-select-btn ats-transparent-btn" id="${user._id}">
                                     <div>
-                                        <i class="fa-2x fa fa-pencil-alt ats-admin-table-btn" id="${user._id}"></i>
+                                        <i class="fa-2x fa fa-pencil-alt ats-admin-table-btn"></i>
                                     </div>
                                     Edit
                                 </button>
@@ -56,7 +56,7 @@ function renderUsers(users) {
 }
 
 function deleteUser(event) {
-    let del = jQuery(event.target)
+    let del = jQuery(event.currentTarget)
     let theIndex = del.attr("id")
     let theId = users[theIndex]._id
     userService.deleteUser(theId)
@@ -67,7 +67,7 @@ function deleteUser(event) {
 }
 
 function selectUser(event) {
-    let selectBtn = jQuery(event.target)
+    let selectBtn = jQuery(event.currentTarget)
     let theId = selectBtn.attr("id")
     selectedUser = users.find(user => user._id === theId)
     $usernameFld.val(selectedUser.username)
