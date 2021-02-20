@@ -3,6 +3,11 @@ import CourseRow from "./course-row";
 
 class CourseTable extends React.Component{
 
+    constructor(props) {
+        super(props)
+
+    }
+
 
     addCourse = () => {
         const newCourse = {
@@ -22,7 +27,7 @@ class CourseTable extends React.Component{
                     <button onClick={this.addCourse}>Add Course</button>
                     <table className="table">
                         {
-                            this.state.courses.map(course =>
+                            this.props.courses.map(course =>
                                                  <CourseRow course={course}/>)
                         }
                     </table>

@@ -1,11 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CourseManager from "./componenets/course-manager";
+import CourseEditor from "./componenets/course-editor";
+import { BrowserRouter } from "react-router-dom";
+import Route from "react-router-dom/es/Route";
 
 function App() {
   return (
-    <div className="App">
-      Hello WOrld
-    </div>
+      <BrowserRouter>
+          <Route path="/courses" component={CourseManager} />
+          <Route path="/editor" component={CourseEditor} />
+
+      </BrowserRouter>
+
   );
 }
 
