@@ -11,8 +11,7 @@ import CourseEditor from "./componenets/course-editor";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CourseManager />
-    <CourseEditor/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

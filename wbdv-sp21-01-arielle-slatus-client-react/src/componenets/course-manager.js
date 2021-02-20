@@ -2,6 +2,7 @@ import React from 'react'
 import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
 import CourseEditor from "./course-editor";
+import Route from "react-router-dom/es/Route";
 
 class CourseManager extends React.Component {
     state = {
@@ -33,9 +34,9 @@ class CourseManager extends React.Component {
             <div>
                 <h1>Course Manager</h1>
                 <button onClick={this.addCourse}>Add Course</button>
-                <CourseTable deleteCourse={this.deleteCourse} courses={this.state.courses}/>
-                <CourseGrid deleteCourse={this.deleteCourse} courses={this.state.courses}/>
-                <CourseEditor/>
+                <Route path="/courses/grid" render={() => <CourseGrid deleteCourse={this.deleteCourse} courses={this.state.courses}/>} />
+                <Route path="/courses/table" render={() => <CourseTable deleteCourse={this.deleteCourse} courses={this.state.courses}/>} />
+
             </div>
 
         )
