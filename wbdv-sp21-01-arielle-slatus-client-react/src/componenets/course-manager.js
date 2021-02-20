@@ -12,12 +12,29 @@ class CourseManager extends React.Component {
             {title: "CS5310", owner: "her", lastModified: "5/1/2021"}
         ]
     }
+
+    addCourse = () => {
+        const newCourse = {
+            title: "New Course",
+            owner: "me",
+            lastModified: "2/19/2021"
+        }
+        this.state.courses.push(newCourse)
+        this.setState(this.state)
+    }
+
+    deleteCourse = (courseToDelete) => {
+        const newCourses = this.state.courses.filter(course => course !== courseToDelete)
+        this.setState({courses: newCourses})
+    }
+
     render() {
         return (
             <div>
                 <h1>Course Manager</h1>
-                <CourseTable courses={this.state.courses}/>
-                <CourseGrid courses={this.state.courses}/>
+                <button onClick={this.addCourse}>Add Course</button>
+                <CourseTable deleteCourse={this.deleteCourse} courses={this.state.courses}/>
+                <CourseGrid deleteCourse={this.deleteCourse} courses={this.state.courses}/>
                 <CourseEditor/>
             </div>
 

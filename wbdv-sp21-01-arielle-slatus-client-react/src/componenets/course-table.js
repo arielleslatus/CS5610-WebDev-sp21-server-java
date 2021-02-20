@@ -9,27 +9,26 @@ class CourseTable extends React.Component{
     }
 
 
-    addCourse = () => {
-        const newCourse = {
-            title: "New Course",
-            owner: "me",
-            lastModified: "2/19/2021"
-        }
-        this.state.courses.push(newCourse)
-        this.setState(this.state)
-    }
+
 
     render() {
 
             return (
                 <div>
                     <h2>Course Table</h2>
-                    <button onClick={this.addCourse}>Add Course</button>
                     <table className="table">
+                        <tbody>
                         {
                             this.props.courses.map(course =>
-                                                 <CourseRow course={course}/>)
+                                                       <CourseRow
+                                                           course={course}
+                                                           deleteCourse={this.props.deleteCourse}
+                                                           title={course.title}
+                                                           owner={course.owner}
+                                                           lastModified={course.lastModified}
+                                                       />)
                         }
+                        </tbody>
                     </table>
                 </div>
 
