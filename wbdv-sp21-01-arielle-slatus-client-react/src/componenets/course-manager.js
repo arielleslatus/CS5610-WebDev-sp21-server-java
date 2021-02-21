@@ -3,20 +3,16 @@ import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
 import CourseEditor from "./course-editor";
 import Route from "react-router-dom/es/Route";
-import {findAllCourses} from "../services/course-service"
+import courseService, {findAllCourses, deleteCourse} from "../services/course-service"
 
 class CourseManager extends React.Component {
     state = {
-        courses: [
-            {title: "CS5610", owner: "me", lastModified: "1/1/2021"},
-            {title: "CS3200", owner: "him", lastModified: "9/1/2020"},
-            {title: "CS5001", owner: "you", lastModified: "3/1/2021"},
-            {title: "CS5310", owner: "her", lastModified: "5/1/2021"}
-        ]
+        courses: []
     }
 
+
     componentDidMount() {
-        findAllCourses()
+        courseService.findAllCourses()
             .then(courses => this.setState({courses}))
     }
 
@@ -26,13 +22,21 @@ class CourseManager extends React.Component {
             owner: "me",
             lastModified: "2/19/2021"
         }
-        this.state.courses.push(newCourse)
-        this.setState(this.state)
+        courseService.createCourse(newCourse)
+            .then(actualCourse => {
+                this.state.courses.push(actualCourse)
+                this.setState(this.state)
+            })
     }
 
+
     deleteCourse = (courseToDelete) => {
-        const newCourses = this.state.courses.filter(course => course !== courseToDelete)
-        this.setState({courses: newCourses})
+        courseService.deleteCourse(courseToDelete._id)
+            .then(status => {
+                this.setState((prevState) => ({
+                    courses: prevState.courses.filter(course => course._id !== courseToDelete._id)
+                }))
+            })
     }
 
     render() {
