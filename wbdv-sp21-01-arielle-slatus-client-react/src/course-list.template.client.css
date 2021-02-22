@@ -6,6 +6,7 @@
 
 .ats-list-area {
     padding-top: 109px;
+    margin: 0 auto;
 }
 
 .ats-timestamp-label {
@@ -43,4 +44,8 @@
 
 .ats-table {
     height: 100%
+}
+
+.ats-card {
+    padding-top: 10px;
 }

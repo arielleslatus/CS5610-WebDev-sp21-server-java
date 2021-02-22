@@ -1,18 +1,10 @@
 import React from 'react'
 import CourseCard from "./course-card";
-import { Link } from "react-router-dom";
-import CourseRow from "./course-row";
+import '../course-list.template.client.css'
+import '../style.css'
 
 const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
-    <div>
-        <h2>Course Grid</h2>
-        <Link to="/courses/table">
-            <i className="fas fa-list float-right"></i>
-
-        </Link>
-
-
-        <div className="row">
+    <div className="row container-lg ats-list-area">
         {
             courses.map(course => <CourseCard
                     course={course}
@@ -23,7 +15,6 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
                     lastModified={course.lastModified}
             />)
         }
-        </div>
     </div>
 
 export default CourseGrid

@@ -6,6 +6,10 @@ import Route from "react-router-dom/es/Route";
 import courseService, {findAllCourses, deleteCourse, updateCourse, findCourseById} from "../services/course-service"
 import '../course-list.template.client.css'
 import '../style.css'
+import {Link} from "react-router-dom";
+import SubNavBarGrid from "./sub-nav-bar-grid";
+import SubNavBarTable from "./sub-nav-bar-table";
+
 
 
 class CourseManager extends React.Component {
@@ -79,21 +83,28 @@ class CourseManager extends React.Component {
                         </div>
                     </div>
                 </div>
+                <table className="table ats-fill ats-page-body" >
 
-
-                        <Route path="/courses/grid">
-                            <CourseGrid
-                                deleteCourse={this.deleteCourse}
-                                updateCourse={this.updateCourse}
-                                courses={this.state.courses}/>
-                        </Route>
-                        <Route path="/courses/table">
+                    <Route path="/courses/grid">
+                        <SubNavBarGrid/>
+                        <tbody>
+                        <CourseGrid
+                            deleteCourse={this.deleteCourse}
+                            updateCourse={this.updateCourse}
+                            courses={this.state.courses}/>
+                        </tbody>
+                    </Route>
+                    <Route path="/courses/table">
+                        <SubNavBarTable/>
+                        <tbody>
                             <CourseTable
                                 deleteCourse={this.deleteCourse}
                                 updateCourse={this.updateCourse}
                                 courses={this.state.courses}/>
-                        </Route>
-
+                        </tbody>
+                    </Route>
+                </table>
+                <i className="fas fa-plus-circle fa-3x float-right ats-floating-plus-icon"></i>
 
             </div>
 

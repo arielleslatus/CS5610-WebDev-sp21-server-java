@@ -22,8 +22,8 @@ const CourseCard = ({course,
     }
 
     return (
-        <div className="col-4">
-            <div className="card">
+        <div className="col-4 ats-card">
+            <div className="card ">
                 <div className="card-body">
                     {
                         !editing &&
