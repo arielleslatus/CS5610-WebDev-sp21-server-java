@@ -104,7 +104,7 @@ class CourseManager extends React.Component {
                         </tbody>
                     </Route>
                 </table>
-                <i className="fas fa-plus-circle fa-3x float-right ats-floating-plus-icon"></i>
+                <i onClick={this.addCourse} className="fas fa-plus-circle fa-3x float-right ats-floating-plus-icon"></i>
 
             </div>
 
