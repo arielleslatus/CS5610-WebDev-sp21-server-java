@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
 import CourseEditor from "./course-editor";
@@ -14,8 +14,11 @@ import SubNavBarTable from "./sub-nav-bar-table";
 
 class CourseManager extends React.Component {
     state = {
-        courses: []
+        courses: [],
+        newCourseTitle: ""
     }
+
+
 
 
     componentDidMount() {
@@ -23,9 +26,10 @@ class CourseManager extends React.Component {
             .then(courses => this.setState({courses}))
     }
 
+
     addCourse = () => {
         const newCourse = {
-            title: "New Course",
+            title: this.state.newCourseTitle,
             owner: "me",
             lastModified: "2/19/2021"
         }
@@ -76,7 +80,9 @@ class CourseManager extends React.Component {
                         </div>
                         <div className="col-8">
                             <input type="text" className="form-control"
-                                   placeholder="New Course Title"/>
+                                   placeholder="New Course Title" className="ats-new-course-fld"
+                                   onChange={(e) => this.setState({newCourseTitle: e.target.value})}
+                                   value={this.state.newCourseTitle}/>
                         </div>
                         <div>
                             <i onClick={this.addCourse} className="fas fa-plus fa-2x"></i>
