@@ -53,7 +53,7 @@ const CourseRow = ({course,
                 {
                     editing &&
                     <div>
-                        <i onClick={() => saveCourse()} className="fas fa-check"></i>
+                        <i onClick={() => saveCourse()} className="fas fa-check ats-icon-spacing"></i>
                     </div>
                 }
             </td>
