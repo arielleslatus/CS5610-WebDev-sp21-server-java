@@ -15,7 +15,7 @@ import SubNavBarTable from "./sub-nav-bar-table";
 class CourseManager extends React.Component {
     state = {
         courses: [],
-        newCourseTitle: ""
+        newCourseTitle: "New Course Title"
     }
 
 
@@ -38,6 +38,7 @@ class CourseManager extends React.Component {
                 this.state.courses.push(actualCourse)
                 this.setState(this.state)
             })
+        this.state.newCourseTitle = "New Course Title"
     }
 
 
@@ -80,7 +81,7 @@ class CourseManager extends React.Component {
                         </div>
                         <div className="col-8">
                             <input type="text" className="form-control"
-                                   placeholder="New Course Title" className="ats-new-course-fld"
+                                   className="ats-new-course-fld"
                                    onChange={(e) => this.setState({newCourseTitle: e.target.value})}
                                    value={this.state.newCourseTitle}/>
                         </div>
