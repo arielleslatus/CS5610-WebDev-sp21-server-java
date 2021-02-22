@@ -3,7 +3,7 @@ import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
 import CourseEditor from "./course-editor";
 import Route from "react-router-dom/es/Route";
-import courseService, {findAllCourses, deleteCourse, updateCourse} from "../services/course-service"
+import courseService, {findAllCourses, deleteCourse, updateCourse, findCourseById} from "../services/course-service"
 
 class CourseManager extends React.Component {
     state = {

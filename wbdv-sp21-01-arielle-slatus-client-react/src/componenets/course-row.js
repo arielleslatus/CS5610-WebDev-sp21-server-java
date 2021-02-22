@@ -18,8 +18,6 @@ const CourseRow = ({course,
             ...course,
             title: inputTitle
         }
-
-        console.log(inputTitle)
         updateCourse(newCourse)
     }
 
