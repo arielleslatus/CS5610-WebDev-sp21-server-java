@@ -1,0 +1,46 @@
+.ats-list-item {
+    color: slategrey;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.ats-list-area {
+    padding-top: 109px;
+}
+
+.ats-timestamp-label {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: darkslategrey;
+}
+
+.ats-sticky-list-bar {
+    color: darkslategrey;
+    background-color: lightgrey;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 58px;
+    z-index: 1;
+}
+
+.ats-sticky-x {
+    position: fixed;
+}
+
+.ats-floating-plus-icon {
+    color: darkslateblue;
+    top: 750px;
+    position: fixed;
+    right: 100px;
+
+}
+
+.ats-icon-spacing {
+    padding-right: 10px;
+}
+
+.ats-table {
+    height: 100%
+}

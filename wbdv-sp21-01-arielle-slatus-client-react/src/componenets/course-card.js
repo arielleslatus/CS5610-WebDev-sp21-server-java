@@ -41,6 +41,7 @@ const CourseCard = ({course,
                         make up the bulk of the card's content.</p>
                     <a href="#" className="btn btn-primary">Go somewhere</a>
                     <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
+
                     {
                         !editing &&
                         <i onClick={() => setEditing(true)} className="fas fa-edit"></i>
@@ -49,6 +50,9 @@ const CourseCard = ({course,
                         editing &&
                         <i onClick={() => saveCourse()} className="fas fa-check"></i>
                     }
+
+
+
                 </div>
             </div>
         </div>
