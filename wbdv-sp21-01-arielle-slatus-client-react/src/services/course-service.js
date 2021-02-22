@@ -28,10 +28,21 @@ export const deleteCourse = (courseId) =>
           {method: 'DELETE'})
         .then(response => response.json())
 
+export const updateCourse = (courseId, course) =>
+    fetch(`${COURSES_URL}/${courseId}`,{
+        method:'PUT',
+        body: JSON.stringify(course),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+
 const api = {
     findAllCourses: findAllCourses,
     createCourse: createCourse,
-    deleteCourse: deleteCourse
+    deleteCourse: deleteCourse,
+    updateCourse: updateCourse
 }
 
 export default api;

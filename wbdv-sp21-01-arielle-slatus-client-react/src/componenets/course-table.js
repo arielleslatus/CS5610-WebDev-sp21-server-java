@@ -21,6 +21,7 @@ class CourseTable extends React.Component{
                         this.props.courses.map(course => <CourseRow
                             course={course}
                             deleteCourse={this.props.deleteCourse}
+                            updateCourse={this.props.updateCourse}
                             title={course.title}
                             owner={course.owner}
                             lastModified={course.lastModified}
