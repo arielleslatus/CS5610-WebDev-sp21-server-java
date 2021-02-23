@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import {Link} from "react-router-dom";
+import setCurrentCourse from './course-manager'
 import '../course-list.template.client.css'
 import '../style.css'
 
 const CourseRow = ({course,
                        deleteCourse,
                        updateCourse,
+                       setCurrentCourse,
                        title="Unknown",
                        owner="Unknown",
                        lastModified="Unknown"
@@ -22,6 +24,14 @@ const CourseRow = ({course,
         }
         updateCourse(newCourse)
     }
+
+    const doDelete = (course) => {
+        deleteCourse(course)
+        setEditing(false)
+        console.log(inputTitle)
+    }
+
+
 
 
     return (
@@ -44,7 +54,6 @@ const CourseRow = ({course,
             <td className="col-2 d-none d-md-block">{course.owner}</td>
             <td className="col-2 d-none d-md-block">{course.lastModified}</td>
             <td className="col-xs-1 col-sm-1">
-                <i onClick={() => deleteCourse(course)} className="fas fa-trash ats-icon-spacing"></i>
 
                 {
                     !editing &&
@@ -54,6 +63,8 @@ const CourseRow = ({course,
                     editing &&
                     <div>
                         <i onClick={() => saveCourse()} className="fas fa-check ats-icon-spacing"></i>
+                        <i onClick={() => doDelete(course)} className="fas fa-trash ats-icon-spacing"></i>
+
                     </div>
                 }
             </td>

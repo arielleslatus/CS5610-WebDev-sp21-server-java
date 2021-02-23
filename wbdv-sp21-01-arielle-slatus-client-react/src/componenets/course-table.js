@@ -3,6 +3,7 @@ import CourseRow from "./course-row";
 import { Link } from "react-router-dom";
 import '../course-list.template.client.css'
 import '../style.css'
+import {findCourseById} from "../services/course-service";
 
 
 class CourseTable extends React.Component{
@@ -11,11 +12,17 @@ class CourseTable extends React.Component{
         super(props)
     }
 
+
+
+
+
+
     render() {
         return (
             <div className="ats-list-area" >
                 {
                     this.props.courses.map(course => <CourseRow
+                        key={course._id}
                         course={course}
                         deleteCourse={this.props.deleteCourse}
                         updateCourse={this.props.updateCourse}

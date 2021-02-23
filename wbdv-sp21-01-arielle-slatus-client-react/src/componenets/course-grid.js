@@ -7,6 +7,7 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
     <div className="row container-lg ats-list-area">
         {
             courses.map(course => <CourseCard
+                    key={course._id}
                     course={course}
                     deleteCourse={deleteCourse}
                     updateCourse={updateCourse}

@@ -10,6 +10,8 @@ const SubNavBarTable = () =>
             <th className="col-2 d-none d-md-block">Owned by</th>
             <th className="col-2 d-none d-md-block">Last Modified</th>
             <th className="col-xs-1 col-sm-1">
+                <i className="fas fa-sort-alpha-up-alt ats-icon-spacing"></i>
+                <i className="fas fa-folder ats-icon-spacing"></i>
                 <Link to="/courses/grid">
                     <i className="fas fa-table float-right"></i>
                 </Link>

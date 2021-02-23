@@ -27,32 +27,36 @@ const CourseCard = ({course,
                 <div className="card-body">
                     {
                         !editing &&
-                        <Link to={"/editor"}>
-                            {course.title}
-                        </Link>
+                        <div>
+                            <Link to={"/editor"}>
+                                {course.title}
+                            </Link>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                            <i onClick={() => setEditing(true)} className="fas fa-edit"></i>
+                        </div>
+
+
                     }
                     {
                         editing &&
-                        <input
-                            onChange={(e) => setTitle(e.target.value)}
-                            value={inputTitle}/>
+                        <div>
+                            <input onChange={(e) => setTitle(e.target.value)} value={inputTitle}/>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                            <i onClick={() => saveCourse()} className="fas fa-check"></i>
+                            <i onClick={() => {
+                                deleteCourse(course);
+                                setEditing(false);
+                            }} className="fas fa-trash"></i>
+
+
+                        </div>
                     }
-                    <p className="card-text">Some quick example text to build on the card title and
-                        make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                    <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
-
-                    {
-                        !editing &&
-                        <i onClick={() => setEditing(true)} className="fas fa-edit"></i>
-                    }
-                    {
-                        editing &&
-                        <i onClick={() => saveCourse()} className="fas fa-check"></i>
-                    }
-
-
-
                 </div>
             </div>
         </div>

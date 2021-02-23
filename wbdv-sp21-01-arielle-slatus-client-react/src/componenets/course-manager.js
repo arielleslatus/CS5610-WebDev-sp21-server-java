@@ -15,7 +15,7 @@ import SubNavBarTable from "./sub-nav-bar-table";
 class CourseManager extends React.Component {
     state = {
         courses: [],
-        newCourseTitle: "New Course Title"
+        newCourseTitle: "New Course Title",
     }
 
 
@@ -46,7 +46,9 @@ class CourseManager extends React.Component {
         courseService.deleteCourse(courseToDelete._id)
             .then(status => {
                 this.setState((prevState) => ({
-                    courses: prevState.courses.filter(course => course._id !== courseToDelete._id)
+                    ...prevState,
+                    courses: prevState.courses.filter
+                    (course => course !== courseToDelete)
                 }))
             })
     }
@@ -66,6 +68,16 @@ class CourseManager extends React.Component {
                     return nextState
                 })
             })
+    }
+
+
+
+    setCurrentCourse = (course) => {
+        for (let i = 0; i < this.state.courses.length; i++) {
+            if (course.title === this.state.courses[i].title) {
+                return this.state.courses[i + 1]
+            }
+        }
     }
 
     render() {
@@ -96,6 +108,7 @@ class CourseManager extends React.Component {
                         <SubNavBarGrid/>
                         <tbody>
                         <CourseGrid
+                            setCurrentCourse={this.setCurrentCourse}
                             deleteCourse={this.deleteCourse}
                             updateCourse={this.updateCourse}
                             courses={this.state.courses}/>
@@ -105,6 +118,7 @@ class CourseManager extends React.Component {
                         <SubNavBarTable/>
                         <tbody>
                             <CourseTable
+                                setCurrentCourse={this.setCurrentCourse}
                                 deleteCourse={this.deleteCourse}
                                 updateCourse={this.updateCourse}
                                 courses={this.state.courses}/>
