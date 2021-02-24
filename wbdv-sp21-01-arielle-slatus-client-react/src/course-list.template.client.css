@@ -42,6 +42,11 @@
     padding-right: 10px;
 }
 
+.ats-card-icon-spacing {
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
 .ats-table {
     height: 100%
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import '../style.css'
+
 
 const SubNavBarGrid = () =>
     <thead className=" row container-xxl ats-sticky-list-bar">
-        <tr className="col-2"></tr>
-        <tr className="row container-lg flex-nowrap">
+        <tr className="row container-lg flex-nowrap ats-align-center-horizontal">
 
             <th className="col-xs-11 col-sm-11 col-md-9">Recent Documents</th>
             <th className="col-2 d-none d-md-block">Owned by me</th>

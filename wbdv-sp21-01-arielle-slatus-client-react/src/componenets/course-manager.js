@@ -76,7 +76,7 @@ class CourseManager extends React.Component {
                             Course Manager
                         </div>
                         <div className="col-lg-8 col-md-10 col-sm-10 col-xs-10">
-                            <input type="text" className=" ats-new-course-fld form-control"
+                            <input type="text" className=" ats-new-course-fld form-control" placeholder="New Course Name"
                                    onChange={(e) => this.setState({newCourseTitle: e.target.value})}
                                    value={this.state.newCourseTitle}/>
                         </div>

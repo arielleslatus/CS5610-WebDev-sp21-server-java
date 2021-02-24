@@ -35,7 +35,7 @@ const CourseRow = ({course,
 
     return (
         <tr className="row container-lg ats-list-item  flex-nowrap">
-            <td scope="col" className="col-lx-6 col-lg-6 col-md-7 col-sm-7 col-xs-11">
+            <td scope="col" className="col-lx-4 col-lg-4 col-md-7 col-sm-7 col-xs-11">
                 <i className="fas fa-folder ats-icon-spacing"></i>
                 {
                     !editing &&
@@ -51,7 +51,7 @@ const CourseRow = ({course,
                 }
             </td>
             <td scope="col" className="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-table-cell">{course.owner}</td>
-            <td scope="col" className="col-xl-2 col-lg-2 d-none d-lg-table-cell">{course.lastModified}</td>
+            <td scope="col" className="col-xl-4 col-lg-4 d-none d-lg-table-cell">{course.lastModified}</td>
             <td scope="col" className="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 float-left flex-nowrap">
 
                 {
