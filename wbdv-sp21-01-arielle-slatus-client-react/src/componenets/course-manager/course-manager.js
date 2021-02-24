@@ -1,16 +1,12 @@
-import React, {useState} from 'react'
-import CourseTable from "./course-table";
-import CourseGrid from "./course-grid";
-import CourseEditor from "./course-editor";
+import React from 'react'
+import CourseTable from "../course-table/course-table";
+import CourseGrid from "../course-grid/course-grid";
 import Route from "react-router-dom/es/Route";
-import courseService, {findAllCourses, deleteCourse, updateCourse, findCourseById} from "../services/course-service"
-import '../course-list.template.client.css'
-import '../style.css'
-import {Link} from "react-router-dom";
+import courseService from "../../services/course-service"
+import '../course-table/course-table.template.client.css'
+import '../component-style.css'
 import SubNavBarGrid from "./sub-nav-bar-grid";
 import SubNavBarTable from "./sub-nav-bar-table";
-
-
 
 class CourseManager extends React.Component {
     state = {
@@ -76,18 +72,20 @@ class CourseManager extends React.Component {
                             Course Manager
                         </div>
                         <div className="col-lg-8 col-md-10 col-sm-10 col-xs-10">
-                            <input type="text" className=" ats-new-course-fld form-control" placeholder="New Course Name"
+                            <input type="text"
+                                   placeholder="New Course Name"
                                    onChange={(e) => this.setState({newCourseTitle: e.target.value})}
-                                   value={this.state.newCourseTitle}/>
+                                   value={this.state.newCourseTitle}
+                                   className=" ats-new-course-fld form-control" />
                         </div>
                         <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                            <i onClick={this.addCourse} className="fas fa-plus fa-2x"></i>
+                            <i onClick={this.addCourse}
+                               className="fas fa-plus fa-2x"></i>
                         </div>
                     </div>
                 </div>
                 <div className="table-responsive-md">
                     <table className="table ats-fill ats-page-body text-nowrap" >
-
                         <Route path="/courses/grid">
                             <SubNavBarGrid/>
                             <tbody>
@@ -109,15 +107,12 @@ class CourseManager extends React.Component {
                             </tbody>
                         </Route>
                     </table>
-
                 </div>
-                <i onClick={this.addCourse} className="fas fa-plus-circle fa-3x float-right ats-floating-plus-icon"></i>
-
+                <i onClick={this.addCourse}
+                   className="fas fa-plus-circle fa-3x float-right ats-floating-plus-icon"></i>
             </div>
-
         )
     }
-
 }
 
 export default CourseManager

@@ -26,37 +26,30 @@ const CourseCard = ({course,
         <div className="col-4 ats-card">
             <div className="card text-wrap">
                 <div className="card-body flex-wrap">
-                    <img className="card-img-top" src={picture} alt="Card image cap"/>
+                    <img className="card-img-top"
+                         src={picture}
+                         alt="Card image cap"/>
                     {
                         !editing &&
                         <div>
-                            <Link to={"/editor"}>
+                            <Link to={"/editor"} className="ats-card-title">
                                 {course.title}
                             </Link>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-
-                            <i onClick={() => setEditing(true)} className="fas fa-edit float-right ats-card-icon"></i>
+                            <i onClick={() => setEditing(true)}
+                               className="fas fa-edit float-right ats-card-icon"></i>
                         </div>
-
-
                     }
                     {
                         editing &&
                         <div>
-                            <input className="form-control" onChange={(e) => setTitle(e.target.value)} value={inputTitle}/>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-
+                            <input onChange={(e) => setTitle(e.target.value)}
+                                   value={inputTitle}
+                                   className="form-control ats-edit-mode-title" />
                             <i onClick={() => saveCourse()} className="fas fa-check float-right ats-card-icon"></i>
                             <i onClick={() => {
                                 deleteCourse(course);
-                                setEditing(false);
-                            }} className="fas fa-trash float-right ats-card-icon"></i>
-
-
+                                setEditing(false);}}
+                                className="fas fa-trash float-right ats-card-icon"></i>
                         </div>
                     }
                 </div>

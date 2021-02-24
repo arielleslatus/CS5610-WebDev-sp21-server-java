@@ -1,21 +1,13 @@
 import React from 'react'
 import CourseRow from "./course-row";
-import { Link } from "react-router-dom";
-import '../course-list.template.client.css'
-import '../style.css'
-import {findCourseById} from "../services/course-service";
-
+import './course-table.template.client.css'
+import '../component-style.css'
 
 class CourseTable extends React.Component{
 
     constructor(props) {
         super(props)
     }
-
-
-
-
-
 
     render() {
         return (
@@ -32,10 +24,7 @@ class CourseTable extends React.Component{
                     />)
                 }
             </div>
-
-
         )
-
     }
 }
 

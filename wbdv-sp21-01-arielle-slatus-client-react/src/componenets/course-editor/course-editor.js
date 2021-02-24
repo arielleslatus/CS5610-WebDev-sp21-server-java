@@ -1,13 +1,14 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import '../style.css'
+import '../component-style.css'
 
 const CourseEditor = ({history}) => {
     return(
         <div className="container-xxl">
             <div className="ats-sticky-nav-bar row">
                 <Link to={"/courses"}>
-                    <i onClick={() => history.goBack()} className="fas fa-arrow-left fa-2x col-1 ats-back-button"></i>
+                    <i onClick={() => history.goBack()}
+                       className="fas fa-arrow-left fa-2x col-1 ats-back-button"></i>
                 </Link>
                 <div className="col-4 ats-vertical-align">
                     Course Editor

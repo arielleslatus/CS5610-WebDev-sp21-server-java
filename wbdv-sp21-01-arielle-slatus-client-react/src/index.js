@@ -5,8 +5,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CourseManager from "./componenets/course-manager";
-import CourseEditor from "./componenets/course-editor";
+import CourseManager from "./componenets/course-manager/course-manager";
+import CourseEditor from "./componenets/course-editor/course-editor";
 
 
 ReactDOM.render(

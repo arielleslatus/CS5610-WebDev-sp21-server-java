@@ -1,6 +1,7 @@
 .ats-row {
     background-color: white;
     margin: 0 auto;
+    color: slategrey;
 }
 
 .ats-list-area {
@@ -48,6 +49,15 @@
     color: slategrey;
 }
 
+.ats-card-title {
+    color: darkslategray;
+    font-weight: bold;
+}
+
+.ats-edit-mode-title {
+    color: slategrey;
+}
+
 .ats-sub-nav-bar-icon {
     padding-right: 10px;
     padding-top: 10px;
@@ -60,9 +70,6 @@
 
 .ats-card {
     padding-top: 10px;
-}
-
-.ats-new-course-fld {
 }
 
 
