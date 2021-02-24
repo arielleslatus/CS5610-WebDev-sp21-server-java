@@ -67,21 +67,20 @@ class CourseManager extends React.Component {
     render() {
         return (
             <div className="container-xxl">
-                <div class="ats-sticky-nav-bar">
-                    <div className="row">
-                        <div className="col-1">
+                <div class="ats-sticky-nav-bar form-control ">
+                    <div className="row flex-nowrap">
+                        <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                             <i className="fas fa-bars fa-2x"></i>
                         </div>
-                        <div className="col-2  d-none d-lg-block ats-vertical-align">
+                        <div className="col-lg-2 d-none d-lg-block ats-vertical-align">
                             Course Manager
                         </div>
-                        <div className="col-8">
-                            <input type="text" className="form-control"
-                                   className="ats-new-course-fld"
+                        <div className="col-lg-8 col-md-10 col-sm-10 col-xs-10">
+                            <input type="text" className=" ats-new-course-fld form-control"
                                    onChange={(e) => this.setState({newCourseTitle: e.target.value})}
                                    value={this.state.newCourseTitle}/>
                         </div>
-                        <div>
+                        <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                             <i onClick={this.addCourse} className="fas fa-plus fa-2x"></i>
                         </div>
                     </div>
