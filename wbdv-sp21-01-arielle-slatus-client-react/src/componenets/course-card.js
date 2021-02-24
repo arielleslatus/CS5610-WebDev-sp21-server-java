@@ -37,7 +37,7 @@ const CourseCard = ({course,
                             <div></div>
                             <div></div>
 
-                            <i onClick={() => setEditing(true)} className="fas fa-edit float-right"></i>
+                            <i onClick={() => setEditing(true)} className="fas fa-edit float-right ats-card-icon"></i>
                         </div>
 
 
@@ -50,11 +50,11 @@ const CourseCard = ({course,
                             <div></div>
                             <div></div>
 
-                            <i onClick={() => saveCourse()} className="fas fa-check float-right ats-card-icon-spacing"></i>
+                            <i onClick={() => saveCourse()} className="fas fa-check float-right ats-card-icon"></i>
                             <i onClick={() => {
                                 deleteCourse(course);
                                 setEditing(false);
-                            }} className="fas fa-trash float-right ats-card-icon-spacing"></i>
+                            }} className="fas fa-trash float-right ats-card-icon"></i>
 
 
                         </div>

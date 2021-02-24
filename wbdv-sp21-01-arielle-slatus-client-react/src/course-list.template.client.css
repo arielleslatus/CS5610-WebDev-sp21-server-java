@@ -1,5 +1,4 @@
-.ats-list-item {
-    color: slategrey;
+.ats-row {
     background-color: white;
     margin: 0 auto;
 }
@@ -38,13 +37,21 @@
 
 }
 
-.ats-icon-spacing {
+.ats-row-icon {
     padding-right: 10px;
+    color: slategrey;
 }
 
-.ats-card-icon-spacing {
+.ats-card-icon {
     padding-right: 10px;
     padding-top: 10px;
+    color: slategrey;
+}
+
+.ats-sub-nav-bar-icon {
+    padding-right: 10px;
+    padding-top: 10px;
+    color: darkslategray;
 }
 
 .ats-table {
@@ -57,4 +64,5 @@
 
 .ats-new-course-fld {
 }
+
 

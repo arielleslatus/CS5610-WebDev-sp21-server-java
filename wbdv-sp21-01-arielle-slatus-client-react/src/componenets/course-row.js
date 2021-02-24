@@ -34,9 +34,9 @@ const CourseRow = ({course,
 
 
     return (
-        <tr className="row container-lg ats-list-item  flex-nowrap">
+        <tr className="row container-lg ats-row flex-nowrap">
             <td scope="col" className="col-lx-4 col-lg-4 col-md-7 col-sm-7 col-xs-11">
-                <i className="fas fa-folder ats-icon-spacing"></i>
+                <i className="fas fa-folder ats-row-icon"></i>
                 {
                     !editing &&
                     <Link to={"/editor"}>
@@ -56,13 +56,13 @@ const CourseRow = ({course,
 
                 {
                     !editing &&
-                    <i onClick={() => setEditing(true)} className="fas fa-edit ats-icon-spacing"></i>
+                    <i onClick={() => setEditing(true)} className="fas fa-edit ats-row-icon float-right"></i>
                 }
                 {
                     editing &&
                     <div>
-                        <i onClick={() => saveCourse()} className="fas fa-check ats-icon-spacing"></i>
-                        <i onClick={() => doDelete(course)} className="fas fa-trash ats-icon-spacing"></i>
+                        <i onClick={() => saveCourse()} className="fas fa-check ats-row-icon float-right"></i>
+                        <i onClick={() => doDelete(course)} className="fas fa-trash ats-row-icon float-right"></i>
 
                     </div>
                 }
