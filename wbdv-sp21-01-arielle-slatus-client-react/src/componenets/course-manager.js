@@ -15,17 +15,12 @@ import SubNavBarTable from "./sub-nav-bar-table";
 class CourseManager extends React.Component {
     state = {
         courses: [],
-        newCourseTitle: "New Course Title",
     }
-
-
-
 
     componentDidMount() {
         courseService.findAllCourses()
             .then(courses => this.setState({courses}))
     }
-
 
     addCourse = () => {
         const newCourse = {
@@ -40,7 +35,6 @@ class CourseManager extends React.Component {
             })
         this.state.newCourseTitle = "New Course Title"
     }
-
 
     deleteCourse = (courseToDelete) => {
         courseService.deleteCourse(courseToDelete._id)
@@ -70,16 +64,6 @@ class CourseManager extends React.Component {
             })
     }
 
-
-
-    setCurrentCourse = (course) => {
-        for (let i = 0; i < this.state.courses.length; i++) {
-            if (course.title === this.state.courses[i].title) {
-                return this.state.courses[i + 1]
-            }
-        }
-    }
-
     render() {
         return (
             <div className="container-xxl">
@@ -102,29 +86,32 @@ class CourseManager extends React.Component {
                         </div>
                     </div>
                 </div>
-                <table className="table ats-fill ats-page-body" >
+                <div className="table-responsive-md">
+                    <table className="table ats-fill ats-page-body text-nowrap" >
 
-                    <Route path="/courses/grid">
-                        <SubNavBarGrid/>
-                        <tbody>
-                        <CourseGrid
-                            setCurrentCourse={this.setCurrentCourse}
-                            deleteCourse={this.deleteCourse}
-                            updateCourse={this.updateCourse}
-                            courses={this.state.courses}/>
-                        </tbody>
-                    </Route>
-                    <Route path="/courses/table">
-                        <SubNavBarTable/>
-                        <tbody>
+                        <Route path="/courses/grid">
+                            <SubNavBarGrid/>
+                            <tbody>
+                            <CourseGrid
+                                setCurrentCourse={this.setCurrentCourse}
+                                deleteCourse={this.deleteCourse}
+                                updateCourse={this.updateCourse}
+                                courses={this.state.courses}/>
+                            </tbody>
+                        </Route>
+                        <Route path="/courses/table">
+                            <SubNavBarTable/>
+                            <tbody>
                             <CourseTable
                                 setCurrentCourse={this.setCurrentCourse}
                                 deleteCourse={this.deleteCourse}
                                 updateCourse={this.updateCourse}
                                 courses={this.state.courses}/>
-                        </tbody>
-                    </Route>
-                </table>
+                            </tbody>
+                        </Route>
+                    </table>
+
+                </div>
                 <i onClick={this.addCourse} className="fas fa-plus-circle fa-3x float-right ats-floating-plus-icon"></i>
 
             </div>
