@@ -23,8 +23,8 @@ const CourseCard = ({course,
 
     return (
         <div className="col-4 ats-card">
-            <div className="card ">
-                <div className="card-body">
+            <div className="card text-wrap">
+                <div className="card-body flex-wrap">
                     {
                         !editing &&
                         <div>
@@ -43,7 +43,7 @@ const CourseCard = ({course,
                     {
                         editing &&
                         <div>
-                            <input onChange={(e) => setTitle(e.target.value)} value={inputTitle}/>
+                            <input className="form-control" onChange={(e) => setTitle(e.target.value)} value={inputTitle}/>
                             <div></div>
                             <div></div>
                             <div></div>
