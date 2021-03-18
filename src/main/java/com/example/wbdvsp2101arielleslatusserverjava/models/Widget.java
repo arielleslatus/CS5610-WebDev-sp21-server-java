@@ -11,9 +11,11 @@ public class Widget {
   private String cssClass;
   private String style;
   private String value;
+  private String topicId;
 
-  public Widget(Long id, String type, String text, Integer size) {
+  public Widget(Long id, String topicId, String type, String text, Integer size) {
     this.id = id;
+    this.topicId = topicId;
     this.type = type;
     this.text = text;
     this.size = size;
@@ -27,6 +29,13 @@ public class Widget {
     this.id = id;
   }
 
+  public String getTopicId() {
+    return topicId;
+  }
+
+  public void setTopicId(String topicId) {
+    this.topicId = topicId;
+  }
   public String getType() {
     return this.type;
   }
