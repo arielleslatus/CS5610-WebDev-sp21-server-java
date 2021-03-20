@@ -36,6 +36,7 @@ public class WidgetService {
           toReturn.add(w);
         }
       }
+      System.out.println(toReturn.toString());
       return toReturn;
     }
 
@@ -48,11 +49,29 @@ public class WidgetService {
       return null;
     }
 
-    public Integer updateWidget(Long id) {
+    public Integer updateWidget(Long id, Widget newWidget) {
+      for (int i = 0; i < widgets.size(); i++) {
+        Widget w = widgets.get(i);
+        if (w.getId().equals(id)) {
+          widgets.set(i, newWidget);
+          return 1;
+        }
+      }
       return -1;
     }
 
     public Integer deleteWidget(Long id) {
+      int index = -1;
+      for (int i = 0; i < widgets.size(); i++) {
+        Widget w = widgets.get(i);
+        if (w.getId().equals(id)) {
+          index = i;
+        }
+      }
+      if (index >= 0) {
+        widgets.remove(index);
+        return 1;
+      }
       return -1;
     }
 }
