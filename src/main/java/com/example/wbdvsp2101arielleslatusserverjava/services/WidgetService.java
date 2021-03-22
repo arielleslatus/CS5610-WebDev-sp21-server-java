@@ -11,10 +11,6 @@ import java.util.List;
 public class WidgetService {
     private List<Widget> widgets = new ArrayList<Widget>();
 
-    {
-
-    };
-
     public Widget createWidgetForTopic(Widget widget) {
       Long id = (new Date()).getTime();
       widget.setId(id);
