@@ -1,6 +1,17 @@
 package com.example.wbdvsp2101arielleslatusserverjava.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "widgets")
 public class Widget {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String type;
   private Integer widgetOrder;
@@ -12,14 +23,22 @@ public class Widget {
   private String style;
   private String value;
   private String topicId;
+  private String name;
 
-  public Widget(Long id, String topicId, String type, String text, Integer size) {
-    this.id = id;
-    this.topicId = topicId;
-    this.type = type;
-    this.text = text;
-    this.size = size;
+  public String getName() {
+    return name;
   }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+//  public Widget(Long id, String topicId, String type, String text, Integer size) {
+//    this.id = id;
+//    this.topicId = topicId;
+//    this.type = type;
+//    this.text = text;
+//    this.size = size;
+//  }
 
   public Long getId() {
     return this.id;
@@ -116,3 +135,42 @@ public class Widget {
     this.value = value;
   }
 }
+
+//Hibernate:
+//
+//        create table widget (
+//        id bigint not null,
+//        css_class varchar(255),
+//        height integer,
+//        size integer,
+//        style varchar(255),
+//        text varchar(255),
+//        topic_id varchar(255),
+//        type varchar(255),
+//        url varchar(255),
+//        value varchar(255),
+//        widget_order integer,
+//        width integer,
+//        primary key (id)
+//        ) engine=InnoDB
+
+
+/*
+Hibernate:
+
+    create table widgets (
+       id bigint not null auto_increment,
+        css_class varchar(255),
+        height integer,
+        size integer,
+        style varchar(255),
+        text varchar(255),
+        topic_id varchar(255),
+        type varchar(255),
+        url varchar(255),
+        value varchar(255),
+        widget_order integer,
+        width integer,
+        primary key (id)
+    ) engine=InnoDB
+ */
