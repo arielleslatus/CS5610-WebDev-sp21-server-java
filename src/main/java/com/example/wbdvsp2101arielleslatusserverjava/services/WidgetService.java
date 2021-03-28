@@ -36,6 +36,10 @@ public class WidgetService {
       originalWidget.setText(newWidget.getText());
       originalWidget.setType(newWidget.getType());
       originalWidget.setSize(newWidget.getSize());
+      originalWidget.setOrdered(newWidget.getOrdered());
+      if (newWidget.getSrc() != null) {
+        originalWidget.setSrc(newWidget.getSrc());
+      }
       this.repository.save(originalWidget);
       return 1;
     }
