@@ -16,6 +16,8 @@ public class WidgetService {
     WidgetRepository repository;
 
     public Widget createWidgetForTopic(Widget widget) {
+      widget.setHeight(100);
+      widget.setWidth(100);
       return this.repository.save(widget);
     }
 
@@ -37,6 +39,8 @@ public class WidgetService {
       originalWidget.setType(newWidget.getType());
       originalWidget.setSize(newWidget.getSize());
       originalWidget.setOrdered(newWidget.getOrdered());
+      originalWidget.setWidth(newWidget.getWidth());
+      originalWidget.setHeight(newWidget.getHeight());
       if (newWidget.getSrc() != null) {
         originalWidget.setSrc(newWidget.getSrc());
       }
